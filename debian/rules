@@ -6,7 +6,7 @@
 override_dh_auto_configure:
 	dh_auto_configure -- \
 	--enable-rfc2553 --disable-Werror --with-gtk --with-auth \
-	--libdir=/usr/lib --libexecdir=/usr/lib
+	--libdir=/usr/lib --libexecdir=/usr/lib INCLUDESERVER_PYTHON=/usr/bin/python3
 
 	sed s/%DEB_HOST_MULTIARCH%/$(DEB_HOST_MULTIARCH)/ \
 	  debian/distcc.triggers.in >debian/distcc.triggers
@@ -18,7 +18,11 @@ override_dh_auto_configure:
 
 #	exit 1
 
-override_dh_install:
+execute_after_dh_auto_install:
+	mv $(CURDIR)/debian/tmp/usr/local/* $(CURDIR)/debian/tmp/usr/
+	rmdir $(CURDIR)/debian/tmp/usr/local
+
+execute_before_dh_install:
 	dh_installdirs -pdistcc-pump usr/share/man/man1
 
 	mv debian/tmp/usr/bin/pump \
@@ -34,9 +38,10 @@ override_dh_install:
 	rm debian/tmp/usr/sbin/update-distcc-symlinks
 	rm debian/tmp/etc/default/distcc
 
-	perl -i -pe 's,/usr/lib/python3.11/site-packages/include_server/include_server.py,/usr/lib/python3/dist-packages/include_server/include_server.py,' debian/tmp/usr/bin/distcc-pump
+	perl -i -pe 's,/usr/local/lib/python3.11/dist-packages/include_server/include_server.py,/usr/lib/python3/dist-packages/include_server/include_server.py,' debian/tmp/usr/bin/distcc-pump
 
-	dh_install
+override_dh_python3:
+	dh_python3 -pdistcc-pump
 
 override_dh_installchangelogs:
 	dh_installchangelogs NEWS
