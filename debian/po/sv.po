@@ -1,16 +1,16 @@
 # Translation of distcc debconf template to Swedish
-# Copyright (C) 2010 Martin Bagge <brother@bsnet.se>
+# Copyright (C) 2010, 2023 Martin Bagge <brother@persilja.net>
 # This file is distributed under the same license as the distcc package.
 #
 # Martin Ågren <martin.agren@gmail.com>, 2008.
-# Martin Bagge <brother@bsnet.se>, 2009, 2010
+# Martin Bagge <brother@persilja.net>, 2009, 2010, 2023
 msgid ""
 msgstr ""
 "Project-Id-Version: distcc_2.18.3-7.1_sv\n"
 "Report-Msgid-Bugs-To: distcc@packages.debian.org\n"
 "POT-Creation-Date: 2018-12-22 18:41+0100\n"
-"PO-Revision-Date: 2010-01-11 21:45+0100\n"
-"Last-Translator: Martin Bagge <brother@bsnet.se>\n"
+"PO-Revision-Date: 2023-10-26 22:01+0200\n"
+"Last-Translator: Martin Bagge <brother@persilja.net>\n"
 "Language-Team: Swedish <debian-l10n-swedish@lists.debian.org>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
@@ -71,11 +71,6 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../distcc.templates:2001
-#, fuzzy
-#| msgid ""
-#| "You can list multiple hosts and/or networks, separated by spaces. Hosts "
-#| "are represented by their IP address, networks have to be in CIDR "
-#| "notation, f.e. \"192.168.1.0/24\"."
 msgid ""
 "You can list multiple hosts and/or networks, separated by spaces. Hosts are "
 "represented by their IP address, networks have to be in CIDR notation, e.g. "
@@ -83,7 +78,7 @@ msgid ""
 msgstr ""
 "Du kan lista ett flertal värdar och/eller nätverk, separerade med "
 "mellanslag. Värdar representeras av deras IP-address, nätverk måste anges i "
-"CIDR-notation, till exempel \"192.168.1.0/24\"."
+"CIDR-notation, till exempel \"192.0.2.0/24\"."
 
 #. Type: string
 #. Description
@@ -216,6 +211,3 @@ msgstr ""
 "Om du aktiverar det här, läs /usr/share/doc/distcc/README.Debian för "
 "information om hur klienterna måste konfigureras för att använda det. Kom "
 "även ihåg att paketet dbus måste installeras om du vill använda Zeroconf."
-
-#~ msgid "distcc for Debian has been patched with Zeroconf support."
-#~ msgstr "distcc för Debian har utökats med stöd för Zeroconf."
