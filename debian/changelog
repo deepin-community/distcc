@@ -1,3 +1,9 @@
+distcc (3.4+really3.4-4deepin1) unstable; urgency=medium
+
+  * No source change upload against python 3.12.
+
+ -- Tianyu Chen <sweetyfish@deepin.org>  Mon, 08 Jul 2024 09:50:02 +0200
+
 distcc (3.4+really3.4-4) unstable; urgency=medium
 
   * Update Swedish translation (Thanks to Martin Bagge) (Closes: #1054619)
