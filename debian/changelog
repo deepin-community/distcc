@@ -1,8 +1,63 @@
-distcc (3.4+really3.4-4deepin1) unstable; urgency=medium
+distcc (3.4+really3.4-12) unstable; urgency=medium
 
-  * No source change upload against python 3.12.
+  * In distcc.prerm Don't set 'set -eu' but 'set -e'
+    The -u parameter tell to sh to exit if the DPKG_ROOT variable is empty, the
+    case in 99,99% configurations.
 
- -- Tianyu Chen <sweetyfish@deepin.org>  Mon, 08 Jul 2024 09:50:02 +0200
+ -- Christian Marillat <marillat@debian.org>  Fri, 18 Apr 2025 14:19:04 +0200
+
+distcc (3.4+really3.4-11) unstable; urgency=medium
+
+  * Update Portuguese debconf translation (Closes: #1100028)
+  * Update Spanish debconf translation (Closes: #1100473)
+  * Add python3-setuptools to Build-depends (Closes: #1100211)
+
+ -- Christian Marillat <marillat@debian.org>  Sat, 15 Mar 2025 14:33:19 +0100
+
+distcc (3.4+really3.4-10) unstable; urgency=medium
+
+  * Set debconf daemon-jobs default to 10 (was empty) otherwise distcc
+    doesn't start (Closes: #1095206)
+  * Add in /etc/default/distcc comments to not modify this file by hand but
+    instead use dpkg-reconfigure
+
+ -- Christian Marillat <marillat@debian.org>  Wed, 05 Feb 2025 11:11:24 +0100
+
+distcc (3.4+really3.4-9) unstable; urgency=medium
+
+  * Finally I lost more than 40 characters. Really fixed now.
+
+ -- Christian Marillat <marillat@debian.org>  Sat, 19 Oct 2024 17:22:16 +0200
+
+distcc (3.4+really3.4-8) unstable; urgency=medium
+
+  * I'm unlucky $LISTEN option has been truncated to $LIST in runit file.
+    Fixed.
+
+ -- Christian Marillat <marillat@debian.org>  Sat, 19 Oct 2024 17:09:08 +0200
+
+distcc (3.4+really3.4-7) unstable; urgency=medium
+
+  * A quote has been lost in the unit file. Fixed.
+
+ -- Christian Marillat <marillat@debian.org>  Sat, 19 Oct 2024 16:58:00 +0200
+
+distcc (3.4+really3.4-6) unstable; urgency=medium
+
+  * Add patch from PR #479 to fix pump mode issue (Closes: #1085074)
+  * Replace lsb-base by 'sysvinit-utils (>= 3.05-4)'
+  * Add a systemd unit file (Closes: #1039175)
+  * Include path for include_server in distcc-pump is now fixed
+    (Closes: #965378)
+
+ -- Christian Marillat <marillat@debian.org>  Sat, 19 Oct 2024 15:41:36 +0200
+
+distcc (3.4+really3.4-5) unstable; urgency=medium
+
+  * debian/rules Guess python version instead of a fixed version.
+  * Add python3-setuptools to Build-Depends (Closes: #1080576)
+
+ -- Christian Marillat <marillat@debian.org>  Thu, 05 Sep 2024 18:59:32 +0200
 
 distcc (3.4+really3.4-4) unstable; urgency=medium
 
@@ -150,7 +205,7 @@ distcc (3.3.2-4) unstable; urgency=medium
 distcc (3.3.2-3) unstable; urgency=medium
 
   * distcc look at /usr/lib/$(DEB_HOST_MULTIARCH)/distcc for symbolic links
-    but /usr/lib/distcc is still required as this path is harcoded in the
+    but /usr/lib/distcc is still required as this path is hardcoded in the
     source code. I'll report this issue to upstream.
 
  -- Christian Marillat <marillat@debian.org>  Sun, 23 Dec 2018 12:38:54 +0100
@@ -346,7 +401,7 @@ distcc (3.1-3.1) unstable; urgency=low
   * Bump debhelper compatibility to 7
   * As a consequence, replace "dh_clean -k" by "dh_prep"
   * Use ${misc:Depends} to package dependencies to properly insert
-    dependencies triggerred by the use of debhelper
+    dependencies triggered by the use of debhelper
   * Fix pending l10n issues. Debconf translations:
     - Russian (Yuri Kozlov).  Closes: #564170
     - Japanese (Hideki Yamane (Debian-JP)).  Closes: #564303
@@ -665,7 +720,7 @@ distcc (2.13-1) unstable; urgency=low
   * new release version (from 2004-03-02)
   * distcc suggests now distccmon-gnome
     (closes: Bug#237690)
-  * added deconf support (thanks alot to christophe nowicki!)
+  * added deconf support (thanks a lot to christophe nowicki!)
     (closes: Bug#235991)
 
  -- NoÃ¨l KÃ¶the <noel@debian.org>  Mon, 29 Mar 2004 17:13:38 +0200
@@ -706,7 +761,7 @@ distcc (2.11.2-1) unstable; urgency=low
   * new upstream release from 2003-10-23
   * upstream added feature request
     (closes: Bug#207831)
-  * seperated the new gnome mon programm from the distcc package
+  * separated the new gnome mon program from the distcc package
   * added gnome dependencies to build distccmon-gnome
   * updated Standards-Version
   * switched to gettext-based debconf templates

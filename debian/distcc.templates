@@ -53,7 +53,7 @@ _Description: Nice level:
 
 Template: distcc/daemon-jobs
 Type: string
-Default:
+Default: 10
 _Description: Maximum number of concurrent jobs:
  You can tell the distcc daemon to accept a maximum number of jobs at a time.
  This can be useful on systems that should stay interactive while they serve
