@@ -1,5 +1,4 @@
 #!/bin/sh
-# postinst script for distcc
 
 set -e
 
@@ -38,11 +37,14 @@ case "$1" in
         configure)
 		if [ ! -f $conffile ] ; then
 		  cat << EOF > $conffile
-# Defaults for distcc initscript
-# sourced by /etc/init.d/distcc
+# Defaults for distcc initscript and systemd
+# sourced by distcc.service and  /etc/init.d/distcc
+# Don't edit this file but instead use 'dpkg-reconfigure distcc'
 
 #
 # should distcc be started on boot?
+#
+# Not used with systemd
 #
 # STARTDISTCC="true"
 

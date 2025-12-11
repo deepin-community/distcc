@@ -1,14 +1,14 @@
 # Portuguese translation for distcc's debconf messages.
 # This file is distributed under the same license as the distcc package.
 # Ricardo Silva <ardoric@gmail.com>, 2006.
-# Pedro Ribeiro <p.m42.ribeiro@gmail.com>, 2010.
+# Pedro Ribeiro <p.m42.ribeiro@gmail.com>, 2010, 2025
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: distcc 3.1-3.1\n"
+"Project-Id-Version: distcc 3.4+really3.4-10\n"
 "Report-Msgid-Bugs-To: distcc@packages.debian.org\n"
 "POT-Creation-Date: 2018-12-22 18:41+0100\n"
-"PO-Revision-Date: 2010-03-17 00:12+0000\n"
+"PO-Revision-Date: 2025-03-06 15:30+0000\n"
 "Last-Translator: Pedro Ribeiro <p.m42.ribeiro@gmail.com>\n"
 "Language-Team: Portuguese <traduz@debianpt.org>\n"
 "Language: pt\n"
@@ -67,7 +67,6 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../distcc.templates:2001
-#, fuzzy
 #| msgid ""
 #| "You can list multiple hosts and/or networks, separated by spaces. Hosts "
 #| "are represented by their IP address, networks have to be in CIDR "

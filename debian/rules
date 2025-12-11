@@ -1,5 +1,7 @@
 #!/usr/bin/make -f
 
+PYTHON = $(shell python3 -V |cut -d' ' -f2|cut -d'.' -f1-2)
+
 %:
 	dh $@
 
@@ -38,7 +40,7 @@ execute_before_dh_install:
 	rm debian/tmp/usr/sbin/update-distcc-symlinks
 	rm debian/tmp/etc/default/distcc
 
-	perl -i -pe 's,/usr/local/lib/python3.11/dist-packages/include_server/include_server.py,/usr/lib/python3/dist-packages/include_server/include_server.py,' debian/tmp/usr/bin/distcc-pump
+	perl -i -pe 's,/usr/local/lib/python$(PYTHON)/dist-packages/include_server/include_server.py,/usr/lib/python3/dist-packages/include_server/include_server.py,' debian/tmp/usr/bin/distcc-pump
 
 override_dh_python3:
 	dh_python3 -pdistcc-pump
